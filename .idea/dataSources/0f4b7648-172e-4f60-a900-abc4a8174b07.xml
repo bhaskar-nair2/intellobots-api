@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - postgres@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.9">
+    <root id="1">
+      <ServerVersion>10.4</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>13053</ObjectId>
+      <Comment>default administrative connection database</Comment>
+      <IntrospectionStateNumber>115</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <role id="3" parent="1" name="bhaskar">
+      <ObjectId>16384</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="4" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="5" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="6" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="9" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="10" parent="2" name="information_schema">
+      <ObjectId>12762</ObjectId>
+    </schema>
+    <schema id="11" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+    </schema>
+    <schema id="12" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="13" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+    </schema>
+    <schema id="14" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <IntrospectionTimestamp>2018-07-10.16:20:29.559</IntrospectionTimestamp>
+      <IntrospectionStateNumber>590</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="16" parent="2" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="17" parent="2" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="18" parent="2" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="19" parent="2" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="20" parent="2" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="21" parent="2" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <sequence id="22" parent="15" name="cart_order_id_seq">
+      <ObjectId>16472</ObjectId>
+      <StateNumber>590</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="23" parent="15" name="category_cat_id_seq">
+      <ObjectId>16394</ObjectId>
+      <StateNumber>564</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="24" parent="15" name="product_prod_id_seq">
+      <ObjectId>16452</ObjectId>
+      <StateNumber>573</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="25" parent="15" name="users_u_id_seq">
+      <ObjectId>16426</ObjectId>
+      <StateNumber>567</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="26" parent="15" name="cart">
+      <ObjectId>16474</ObjectId>
+      <StateNumber>590</StateNumber>
+    </table>
+    <table id="27" parent="15" name="category">
+      <ObjectId>16396</ObjectId>
+      <StateNumber>573</StateNumber>
+    </table>
+    <table id="28" parent="15" name="product">
+      <ObjectId>16454</ObjectId>
+      <StateNumber>590</StateNumber>
+    </table>
+    <table id="29" parent="15" name="users">
+      <ObjectId>16428</ObjectId>
+      <StateNumber>590</StateNumber>
+    </table>
+    <column id="30" parent="26" name="order_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>590</StateNumber>
+      <DefaultExpression>nextval(&apos;cart_order_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>cart_order_id_seq</SequenceName>
+    </column>
+    <column id="31" parent="26" name="cart_id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>590</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="32" parent="26" name="item_id">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>590</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="33" parent="26" name="quantity">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>590</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="34" parent="26" name="made_on">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <StateNumber>590</StateNumber>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="35" parent="26" name="cart_pkey">
+      <ObjectId>16478</ObjectId>
+      <ColNames>order_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="36" parent="26" name="cart_pkey">
+      <ObjectId>16479</ObjectId>
+      <ColNames>order_id</ColNames>
+      <UnderlyingIndexName>cart_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="26" name="cart_cart_id_fkey">
+      <ObjectId>16480</ObjectId>
+      <ColNames>cart_id</ColNames>
+      <RefTableId>16428</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>u_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="38" parent="26" name="cart_item_id_fkey">
+      <ObjectId>16485</ObjectId>
+      <ColNames>item_id</ColNames>
+      <RefTableId>16454</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>product</RefTableName>
+      <RefKeyName>product_pkey</RefKeyName>
+      <RefColNames>prod_id</RefColNames>
+    </foreign-key>
+    <column id="39" parent="27" name="cat_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>564</StateNumber>
+      <DefaultExpression>nextval(&apos;category_cat_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>category_cat_id_seq</SequenceName>
+    </column>
+    <column id="40" parent="27" name="cat_name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>564</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="41" parent="27" name="cat_level">
+      <Position>3</Position>
+      <DataType>smallint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>564</StateNumber>
+      <DefaultExpression>1</DefaultExpression>
+      <TypeId>21</TypeId>
+    </column>
+    <column id="42" parent="27" name="parent">
+      <Position>4</Position>
+      <DataType>smallint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>564</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>21</TypeId>
+    </column>
+    <index id="43" parent="27" name="category_pkey">
+      <ObjectId>16402</ObjectId>
+      <ColNames>cat_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="44" parent="27" name="category_pkey">
+      <ObjectId>16403</ObjectId>
+      <ColNames>cat_id</ColNames>
+      <UnderlyingIndexName>category_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="28" name="prod_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>573</StateNumber>
+      <DefaultExpression>nextval(&apos;product_prod_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>product_prod_id_seq</SequenceName>
+    </column>
+    <column id="46" parent="28" name="prod_name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>573</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="47" parent="28" name="cat_id">
+      <Position>3</Position>
+      <DataType>smallint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>573</StateNumber>
+      <TypeId>21</TypeId>
+    </column>
+    <column id="48" parent="28" name="featured">
+      <Position>4</Position>
+      <DataType>smallint|0s</DataType>
+      <StateNumber>573</StateNumber>
+      <TypeId>21</TypeId>
+    </column>
+    <column id="49" parent="28" name="brand">
+      <Position>5</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <StateNumber>573</StateNumber>
+      <DefaultExpression>NULL::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="50" parent="28" name="prod_rate">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>573</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="51" parent="28" name="description">
+      <Position>7</Position>
+      <DataType>varchar(500)|0s</DataType>
+      <StateNumber>573</StateNumber>
+      <DefaultExpression>NULL::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="52" parent="28" name="tags">
+      <Position>8</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <StateNumber>573</StateNumber>
+      <DefaultExpression>NULL::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="53" parent="28" name="product_pkey">
+      <ObjectId>16465</ObjectId>
+      <ColNames>prod_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="54" parent="28" name="product_pkey">
+      <ObjectId>16466</ObjectId>
+      <ColNames>prod_id</ColNames>
+      <UnderlyingIndexName>product_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="55" parent="28" name="product_cat_id_fkey">
+      <ObjectId>16467</ObjectId>
+      <ColNames>cat_id</ColNames>
+      <RefTableId>16396</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>category</RefTableName>
+      <RefKeyName>category_pkey</RefKeyName>
+      <RefColNames>cat_id</RefColNames>
+    </foreign-key>
+    <check id="56" parent="28" name="product_featured_check">
+      <ObjectId>16461</ObjectId>
+      <ColNames>featured</ColNames>
+      <Predicate>featured = ANY (ARRAY[1, 2, 3, 4, 5])</Predicate>
+    </check>
+    <column id="57" parent="29" name="u_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>567</StateNumber>
+      <DefaultExpression>nextval(&apos;users_u_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>users_u_id_seq</SequenceName>
+    </column>
+    <column id="58" parent="29" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <StateNumber>567</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="59" parent="29" name="pass">
+      <Position>3</Position>
+      <DataType>varchar(40)|0s</DataType>
+      <StateNumber>567</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="60" parent="29" name="users_pkey">
+      <ObjectId>16432</ObjectId>
+      <ColNames>u_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="61" parent="29" name="users_pkey">
+      <ObjectId>16433</ObjectId>
+      <ColNames>u_id</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

@@ -10,11 +10,14 @@ public class Main {
 
         System.out.println("Hello World!");
         apiRef ar=new apiRef(host,user,pass);//Declare new instance
+        Cart cart=new Cart(host,user,pass);
 
         //Insert Into Functions-
-        String[] aa={"Tomato","1","7","2018-06-10 10:20:30.4"};
-        ar.insertCategory(aa);
-
+        // String[] aa={"Tomato","1","7","2018-06-10 10:20:30.4"};
+       // ar.insertCategory(aa);
+       // cart.addToCart(2,2,20,"2018-06-05 05:04:08.4");
+        //System.out.println(cart.countCart(1));
+        System.out.println(cart.cartDets(1)[0]);
 
     }
 }
@@ -32,7 +35,6 @@ class apiRef{
         try {
             Class.forName("org.postgresql.Driver");
             this.con = DriverManager.getConnection(host,user, pass);
-            System.out.println('1');
         } catch (SQLException e) {
            System.out.println(e.getErrorCode());
            System.out.println(e.getSQLState());
@@ -165,6 +167,93 @@ class apiRef{
             System.out.println(e.getErrorCode());
             System.out.println(e.getSQLState());
         }
+    }
+
+}
+
+class Cart{
+    protected Connection con;
+    protected Statement stmt;
+    protected PreparedStatement pstmt;
+    protected ResultSet rs;
+
+    Cart(String host, String user, String pass){
+        try{
+            Class.forName("org.postgresql.Driver");
+            this.con=DriverManager.getConnection(host, user, pass);
+        }catch (ClassNotFoundException e){
+            System.out.println(e.getException());
+        }
+        catch (SQLException e){
+            System.out.println(e.getSQLState());
+        }
+    }
+
+    protected void addToCart(int u_id,int prod_id,int quantity,String date){
+        try {
+            this.pstmt = this.con.prepareStatement("insert into cart(cart_id, item_id, quantity, made_on) VALUES (?,?,?,?)");
+            this.pstmt.setInt(1,u_id);
+            this.pstmt.setInt(2,prod_id);
+            this.pstmt.setInt(3,quantity);
+            this.pstmt.setTimestamp(4,Timestamp.valueOf(date));
+            this.pstmt.executeUpdate();
+            System.out.println("Success!");
+        }
+        catch (SQLException e){
+            System.out.println(e);
+        }
+
+    }
+
+    protected int countCart(){
+        int count=0;
+        try {
+            stmt=con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);
+            rs=stmt.executeQuery("SELECT count(*) from cart");
+            rs.next();
+            count=rs.getInt(1);
+        }catch (SQLException e){
+            System.out.println(e);
+        }
+        return count;
+    }
+
+    protected int countCart(int u_id){
+        int count=0;
+        try {
+            stmt=con.createStatement(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_READ_ONLY);
+            rs=stmt.executeQuery("SELECT count(*) from cart where cart_id = "+ u_id);
+            rs.next();
+            count=rs.getInt(1);
+        }catch (SQLException e){
+            System.out.println(e);
+        }
+        return count;
+    }
+
+    protected String[][] cartDets(int id){
+        String[][] cartDet=null;
+        try{
+            this.stmt = this.con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+            this.rs=this.stmt.executeQuery("SELECT * from cart where cart_id="+id);
+            rs.last();
+            int rowCt=rs.getRow();
+            cartDet=new String[rowCt][5];
+            String[] order_dets=new String[5];
+            rs.first();
+            int ct=0;
+            while (rs.next()){
+                for(int i=0;i<5;i++){
+                    System.out.println(rs.getInt(i+1));
+                    order_dets[i]=""+rs.getInt(i+1);
+                }
+                cartDet[ct++]=order_dets;
+            }
+        }
+        catch(SQLException e){
+            System.out.println(e);
+        }
+        return cartDet;
     }
 
 }
